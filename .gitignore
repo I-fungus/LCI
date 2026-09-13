@@ -1,0 +1,47 @@
+# ===== Visual Studio 缓存与临时文件 =====
+.vs/
+*.ipch
+*.VC.db
+*.VC.VC.opendb
+*.VC.opendb
+Browse.VC.db
+*.sdf
+*.suo
+*.user
+*.aps
+*.ncb
+*.opensdf
+
+# ===== 编译产物 =====
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.lib
+*.idb
+*.log
+*.tlog
+*.lastbuildstate
+*.cache
+
+# ===== 输出与结果文件（按需保留）=====
+# results/
+output/
+data/
+tmp/
+# *.o
+# *.out
+
+# ===== 系统文件 =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== IDE 配置 =====
+.idea/
+.vscode/
