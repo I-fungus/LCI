@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="520" viewBox="0 0 1800 520">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; fill: #0f172a; font-size: 22px; }
+      .node { fill: #f8fafc; stroke: #334155; stroke-width: 2.5; }
+      .start { fill: #dcfce7; stroke: #15803d; }
+      .end { fill: #dbeafe; stroke: #1d4ed8; }
+      .error { fill: #fee2e2; stroke: #b91c1c; }
+      .decision { fill: #fef3c7; stroke: #b45309; }
+      .line { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .label { fill: #475569; font-size: 18px; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="520" fill="#ffffff"/>
+  <text x="900" y="48" text-anchor="middle" font-size="30" font-weight="700">GNSS/INS 松组合程序流程图</text>
+
+  <ellipse class="node start" cx="85" cy="205" rx="58" ry="36"/>
+  <text x="85" y="213" text-anchor="middle">开始</text>
+
+  <rect class="node" x="180" y="169" width="150" height="72" rx="8"/>
+  <text x="255" y="213" text-anchor="middle">读取配置文件</text>
+
+  <rect class="node" x="370" y="169" width="185" height="72" rx="8"/>
+  <text x="462.5" y="200" text-anchor="middle">读取 IMU / RTK</text>
+  <text x="462.5" y="228" text-anchor="middle">数据</text>
+
+  <polygon class="node decision" points="635,151 725,205 635,259 545,205"/>
+  <text x="635" y="198" text-anchor="middle">数据是否</text>
+  <text x="635" y="226" text-anchor="middle">有效?</text>
+
+  <rect class="node" x="780" y="169" width="190" height="72" rx="8"/>
+  <text x="875" y="200" text-anchor="middle">RTK 数据</text>
+  <text x="875" y="228" text-anchor="middle">窗口平均</text>
+
+  <rect class="node" x="1010" y="169" width="170" height="72" rx="8"/>
+  <text x="1095" y="213" text-anchor="middle">IMU 初始对准</text>
+
+  <polygon class="node decision" points="1260,151 1355,205 1260,259 1165,205"/>
+  <text x="1260" y="198" text-anchor="middle">对准是否</text>
+  <text x="1260" y="226" text-anchor="middle">成功?</text>
+
+  <rect class="node" x="1410" y="169" width="190" height="72" rx="8"/>
+  <text x="1505" y="200" text-anchor="middle">惯导机械编排</text>
+  <text x="1505" y="228" text-anchor="middle">预测</text>
+
+  <rect class="node" x="1410" y="318" width="190" height="72" rx="8"/>
+  <text x="1505" y="349" text-anchor="middle">GNSS / ZUPT /</text>
+  <text x="1505" y="377" text-anchor="middle">NHC 更新</text>
+
+  <rect class="node" x="1165" y="318" width="190" height="72" rx="8"/>
+  <text x="1260" y="362" text-anchor="middle">保存导航结果</text>
+
+  <polygon class="node decision" points="875,300 980,354 875,408 770,354"/>
+  <text x="875" y="347" text-anchor="middle">数据是否</text>
+  <text x="875" y="375" text-anchor="middle">处理完?</text>
+
+  <ellipse class="node end" cx="635" cy="354" rx="58" ry="36"/>
+  <text x="635" y="362" text-anchor="middle">结束</text>
+
+  <rect class="node error" x="780" y="57" width="150" height="64" rx="8"/>
+  <text x="855" y="97" text-anchor="middle">报错退出</text>
+
+  <ellipse class="node error" cx="1095" cy="89" rx="74" ry="36"/>
+  <text x="1095" y="97" text-anchor="middle">异常结束</text>
+
+  <path class="line" d="M143 205 H180"/>
+  <path class="line" d="M330 205 H370"/>
+  <path class="line" d="M555 205 H545"/>
+  <path class="line" d="M725 205 H780"/>
+  <text class="label" x="744" y="190">是</text>
+  <path class="line" d="M970 205 H1010"/>
+  <path class="line" d="M1180 205 H1165"/>
+  <path class="line" d="M1355 205 H1410"/>
+  <text class="label" x="1374" y="190">是</text>
+  <path class="line" d="M1505 241 V318"/>
+  <path class="line" d="M1410 354 H1355"/>
+  <path class="line" d="M1165 354 H980"/>
+  <path class="line" d="M770 354 H693"/>
+  <text class="label" x="725" y="338">是</text>
+
+  <path class="line" d="M875 300 V260 C875 252 875 248 875 241"/>
+  <text class="label" x="895" y="288">否</text>
+
+  <path class="line" d="M635 151 V89 H780"/>
+  <text class="label" x="655" y="132">否</text>
+  <path class="line" d="M1260 151 V89 H930"/>
+  <text class="label" x="1280" y="132">否</text>
+  <path class="line" d="M930 89 H1021"/>
+</svg>

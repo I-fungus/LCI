@@ -1,0 +1,80 @@
+pages 90
+
+--- page 5 ---
+零速修正（ZUPT）
+ZUPT ZUPT vG
+
+--- page 6 ---
+零速修正（ZUPT）
+vZUPT IMU ZUPT IMU vG δ−=z = v v v + n
+
+--- page 7 ---
+零速修正（ZUPT）
+
+--- page 8 ---
+零速修正（ZUPT）
+
+--- page 9 ---
+零速修正（ZUPT）
+
+--- page 10 ---
+零速修正（ZUPT）
+
+--- page 11 ---
+零速修正（ZUPT）
+
+--- page 16 ---
+vZUPT IMU ZUPT IMU vG δ−=z = v v v + n
+
+--- page 18 ---
+非完整性约束（NHC）
+
+--- page 19 ---
+非完整性约束 （Non-holonomic Constraint，NHC）指在
+非完整性约束（NHC）
+NHC
+NHC NHC=+vv 
+
+--- page 20 ---
+车辆行驶过程中NHC成立的地方通常为车辆后轮着地点
+非完整性约束（NHC）
+
+--- page 21 ---
+非完整性约束（NHC）
+
+--- page 22 ---
+非完整性约束（NHC）
+
+--- page 23 ---
+非完整性约束（NHC）
+ NHC异常示例
+侧滑、漂移等场景NHC不成立时如果未合理设置观测噪声
+方差，强制使用NHC约束，则会造成组合导航解算异常！
+使用NHC时需要给出合理的观
+
+--- page 24 ---
+非完整性约束（NHC）
+ NHC辅助导航性能示例
+GNSS/INS GNSS/INS/NHC
+
+--- page 27 ---
+里程计提供的前向速度和NHC提供的虚拟侧向/垂向速度一
+根据实际条件，NHC和ODO可
+
+--- page 29 ---
+速度观测向量表示为INS推算的速度与NHC/ODO提供的速
+所以，NHC/ODO速度观测方程为
+
+--- page 30 ---
+NHC/ODO速度观测的量测矩阵为
+
+--- page 31 ---
+ ODO/NHC辅助导航性能示例
+GNSS/INS GNSS/INS/NHC/ODO
+
+--- page 32 ---
+ZUPT
+NHC
+
+--- page 33 ---
+◼ 杆臂对NHC的影响
